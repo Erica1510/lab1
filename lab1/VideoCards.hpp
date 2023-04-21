@@ -5,7 +5,7 @@
 //  Created by Erica Diaciuc on 10.03.2023.
 //
 
-#pragma once
+
 #ifndef VideoCards_hpp
 #define VideoCards_hpp
 
