@@ -11,7 +11,6 @@
 
 #include <iostream>
 #include <fstream>
-#include <locale.h>
 #include <string>
 
 class Video_Cards
@@ -23,7 +22,7 @@ public:
     int TechnicalProcess{0};
     int EnergyConsum{0};
     float Price{0.0};
-
+    
     void output(){
         std::cout << " " << Product_code << " " << Name << " " << Producer << " " << TechnicalProcess << " " << EnergyConsum << " " << Price;
     }

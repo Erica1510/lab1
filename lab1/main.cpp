@@ -1,6 +1,8 @@
 
 #include "VideoCards.hpp"
 #include "Prototypes.h"
+#include <locale.h>
+
 
 using std::string;
 using std::cout;
@@ -15,34 +17,34 @@ int i = 0;
 
 int main()
 {
-   
+    
     int key = 0;
     int index = 0;
     int key2, m, m1;
     setlocale(LC_ALL, "rus");
-
+    
     Video_Cards obj[50];
     std::ifstream file("/Users/ericadiaciuc/Desktop/алгоритмы и стр/lab1/Table.txt");
     
-
+    
     
     cin.clear();
     while (i != 50) {
         file >> obj[i].Product_code >>  obj[i].Name >> obj[i].Producer >> obj[i].TechnicalProcess >> obj[i].EnergyConsum >> obj[i].Price;
         i++;
     }
-
-
+    
+    
     for (i = 0; i < 50; i++) {
         obj[i].output();
         cout << endl;
     }
     /////////
     line_search(&obj[0], 50);
-
+    
     ////////////
     cout << "\n-------------------------------------------------";
-
+    
     cout << "\nМетод бинарного поиска" << endl;
     cout << "\n\nВведите код товара:";
     cin >> key;
@@ -56,7 +58,7 @@ int main()
     else
         cout << "\n\nВ массиве нет такого товара!\n\n";
     cout << "\n-------------------------------------------------";
-
+    
     /////////
     cout << "\nМетод поиска интерполированием" << endl;
     cout << "\nВведите цену товара:  "; cin >> key2; //ввод ключа
@@ -70,19 +72,19 @@ int main()
     m1= fibMonaccianSearch(&obj[0], 50);
     if (m1 == -1) cout << "\nТовар не найден";
     else { cout << "\nТовар находится в ячейке с индексом: " << m1 + 1; cout << endl; obj[m1].output(); }
-
+    
     cout << "\n-------------------------------------------------";
-
+    
     /////////
- 
+    
     cout << "\n\nМетод поиска в неотсортированных массивах древовидно структурированных" << endl;
-     BinTree* Tree = NULL;
-
+    BinTree* Tree = NULL;
+    
     for (i = 0; i < 50; i++) {
         newBinTree(obj[i].Product_code, &Tree);
     }
-
-
+    
+    
     cout << "\nВведите значение элемента для поиска-> ";
     cin >> key;
     int result_4 = Search(Tree, key);
@@ -96,12 +98,12 @@ int main()
         }
     }
     
-   
-
+    
+    
     
     return 0;
 }
-    
+
 
 
 

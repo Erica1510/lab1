@@ -7,7 +7,6 @@
 
 #ifndef Prototypes_h
 #define Prototypes_h
-#pragma once
 
 void line_search(Video_Cards* obj, int size);
 int Search_Binary(Video_Cards* obj, int left, int right, int key);
